@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Star Pixel Games — Fun Games for Kids</title>
-  <meta name="description" content="Star Pixel Games makes fun, safe, ad-free games for kids. No tracking, no ads, just play.">
+  <title>Color Catcher — Catch Stars, Gems & Treats!</title>
+  <meta name="description" content="Color Catcher is a fun, ad-free catching game for kids ages 4+. Catch falling stars, dodge bad items, grab power-ups, and compete on the leaderboard!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -23,7 +23,6 @@
       --green: #34d399;
       --blue: #38bdf8;
       --pink: #f472b6;
-      --purple: #a78bfa;
     }
 
     body {
@@ -42,29 +41,59 @@
       pointer-events: none;
     }
 
-    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* Nav */
+    .nav {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--heading);
+      text-decoration: none;
+    }
+
+    .nav-brand span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 16px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
 
     /* Hero */
     .hero {
       text-align: center;
-      padding: 80px 0 60px;
+      padding: 60px 0 50px;
       position: relative;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      top: -100px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 400px;
-      background: radial-gradient(ellipse, rgba(251,191,36,.06) 0%, transparent 70%);
+      top: -60px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 350px;
+      background: radial-gradient(ellipse, rgba(255,215,0,.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
-    .logo-emoji { font-size: 64px; margin-bottom: 16px; display: block; }
+    .hero-icon { font-size: 72px; margin-bottom: 16px; display: block; }
 
-    .logo-text {
+    .hero-title {
       font-family: 'Fraunces', Georgia, serif;
-      font-size: clamp(36px, 7vw, 56px);
+      font-size: clamp(32px, 6vw, 48px);
       font-weight: 800;
       color: var(--heading);
       letter-spacing: -0.03em;
@@ -72,157 +101,188 @@
       margin-bottom: 12px;
     }
 
-    .logo-text span { color: var(--accent); }
+    .hero-title span { color: var(--accent); }
 
-    .hero-sub {
-      font-size: 18px;
-      color: var(--text-muted);
-      font-weight: 500;
-      max-width: 440px;
-      margin: 0 auto 32px;
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text);
+      max-width: 460px;
+      margin: 0 auto 28px;
     }
 
-    .badges {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .badge {
+    .price-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 24px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .badge-gold { background: var(--accent-glow); border: 1px solid rgba(251,191,36,.15); color: var(--accent); }
-    .badge-green { background: rgba(52,211,153,.08); border: 1px solid rgba(52,211,153,.12); color: var(--green); }
-    .badge-blue { background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.12); color: var(--blue); }
-
-    /* Games section */
-    .section-title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 28px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(251,191,36,.2);
       color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .section-heading {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: clamp(24px, 4vw, 32px);
       font-weight: 700;
-      color: var(--heading);
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
 
-    .games-section { padding: 40px 0 60px; }
+    .price-badge small {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
 
-    .game-card {
+    .store-buttons {
       display: flex;
-      gap: 28px;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .store-btn {
+      display: inline-flex;
       align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 14px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      margin-bottom: 20px;
+      color: var(--heading);
+      font-weight: 700;
+      font-size: 15px;
       text-decoration: none;
-      color: inherit;
-      transition: border-color 0.3s, transform 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
+      font-family: 'DM Sans', sans-serif;
     }
 
-    .game-card:hover {
-      border-color: rgba(251,191,36,.2);
+    .store-btn:hover {
+      border-color: rgba(251,191,36,.3);
       transform: translateY(-2px);
     }
 
-    .game-icon { font-size: 56px; flex-shrink: 0; }
+    .store-btn .icon { font-size: 22px; }
 
-    .game-info { flex: 1; }
+    .store-coming { color: var(--text-muted); font-size: 13px; font-style: italic; }
 
-    .game-name {
+    /* Features */
+    .features {
+      padding: 50px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .feature-icon { font-size: 28px; margin-bottom: 8px; }
+
+    .feature-title {
       font-family: 'Fraunces', Georgia, serif;
-      font-size: 22px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--heading);
       margin-bottom: 4px;
     }
 
-    .game-desc {
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.6;
+    .feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    /* How to play */
+    .howto {
+      padding: 50px 0;
+      border-top: 1px solid var(--border);
     }
 
-    .game-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
-    .tag {
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 11px;
-      font-weight: 600;
-      background: var(--surface-2);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-    }
-
-    .game-price {
-      font-size: 20px;
+    .section-label {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 12px;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .section-heading {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .howto-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .howto-step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(251,191,36,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
       color: var(--accent);
       flex-shrink: 0;
     }
 
-    .coming-soon {
-      opacity: 0.5;
-      pointer-events: none;
+    .step-text {
+      font-size: 14px;
+      color: var(--text);
     }
 
-    .coming-soon .game-price {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
+    .step-text strong { color: var(--heading); }
 
-    /* Values */
-    .values-section {
-      padding: 40px 0 60px;
+    /* Safety */
+    .safety {
+      padding: 50px 0;
       border-top: 1px solid var(--border);
     }
 
-    .values-grid {
+    .safety-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    .value-card {
+    .safety-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    .value-icon { font-size: 28px; margin-bottom: 10px; }
-
-    .value-title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 6px;
-    }
-
-    .value-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .safety-check { color: var(--green); font-size: 16px; }
+    .safety-cross { color: #ef4444; font-size: 16px; }
 
     /* Footer */
     .footer {
@@ -250,112 +310,128 @@
 
     .footer-links a:hover { color: var(--accent); }
 
-    .footer-email {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    @media (max-width: 600px) {
-      .game-card { flex-direction: column; text-align: center; gap: 16px; padding: 24px; }
-      .hero { padding: 50px 0 40px; }
+    @media (max-width: 500px) {
+      .safety-grid { grid-template-columns: 1fr; }
+      .hero { padding: 40px 0 35px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
 
+    <nav class="nav">
+      <a href="/" class="nav-brand">Star <span>Pixel</span> Games</a>
+      <div class="nav-links">
+        <a href="/color-catcher/privacy">Privacy</a>
+        <a href="/color-catcher/support">Support</a>
+      </div>
+    </nav>
+
     <section class="hero">
-      <span class="logo-emoji">✨🎮✨</span>
-      <h1 class="logo-text">Star <span>Pixel</span> Games</h1>
-      <p class="hero-sub">Fun, safe, ad-free games for kids. No tracking, no distractions — just play.</p>
-      <div class="badges">
-        <span class="badge badge-gold">✦ No Ads</span>
-        <span class="badge badge-green">✓ No Tracking</span>
-        <span class="badge badge-blue">⬇ Works Offline</span>
+      <span class="hero-icon">⭐🧺⭐</span>
+      <h1 class="hero-title">Color <span>Catcher</span></h1>
+      <p class="hero-desc">Catch falling stars, gems, and treats! Dodge bad items, grab power-ups, and compete for the high score. Made for kids, fun for everyone.</p>
+
+      <div class="price-badge">
+        $0.99 <small>• One-time purchase, no ads ever</small>
+      </div>
+
+      <div class="store-buttons">
+        <a href="#" class="store-btn">
+          <span class="icon">🍎</span> App Store
+        </a>
+        <a href="#" class="store-btn">
+          <span class="icon">▶️</span> Google Play
+        </a>
+      </div>
+      <p class="store-coming">Store links available at launch</p>
+    </section>
+
+    <section class="features">
+      <div class="section-label">Features</div>
+      <h2 class="section-heading">What makes it fun</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">3 Difficulty Levels</div>
+          <div class="feature-desc">Easy for beginners, Hard for pros. Every skill level has a challenge.</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌟</div>
+          <div class="feature-title">Power-Ups</div>
+          <div class="feature-desc">Widen your basket, slow time, or grab a shield. Three power-ups to master.</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🏆</div>
+          <div class="feature-title">Local Leaderboard</div>
+          <div class="feature-desc">Pick an avatar, enter your name, and compete with family and friends on one device.</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔥</div>
+          <div class="feature-title">Combo System</div>
+          <div class="feature-desc">Chain catches for multiplied points. Hit 5 in a row for 2x, 10 for 3x, 15 for 4x!</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎵</div>
+          <div class="feature-title">Sound Effects</div>
+          <div class="feature-desc">Satisfying audio feedback for every catch, combo, level-up, and milestone.</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎆</div>
+          <div class="feature-title">Milestones</div>
+          <div class="feature-desc">Fireworks at 100, 250, 500, and 1000 points. The sky changes as you score higher!</div>
+        </div>
       </div>
     </section>
 
-    <section class="games-section">
-      <div class="section-title">Our Games</div>
-      <h2 class="section-heading">Made for kids, loved by everyone</h2>
-
-      <a href="/color-catcher" class="game-card">
-        <div class="game-icon">⭐🧺</div>
-        <div class="game-info">
-          <div class="game-name">Color Catcher</div>
-          <div class="game-desc">Catch falling stars, gems, and treats! Dodge bad items, grab power-ups, and climb the leaderboard. Three difficulty levels for all skill levels.</div>
-          <div class="game-tags">
-            <span class="tag">Ages 4+</span>
-            <span class="tag">Casual</span>
-            <span class="tag">Single Player</span>
-          </div>
+    <section class="howto">
+      <div class="section-label">How to Play</div>
+      <h2 class="section-heading">Easy to learn, hard to master</h2>
+      <div class="howto-steps">
+        <div class="howto-step">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Move the basket</strong> with your finger, mouse, or arrow keys</div>
         </div>
-        <div class="game-price">$0.99</div>
-      </a>
-
-      <div class="game-card coming-soon">
-        <div class="game-icon">🐸🌿</div>
-        <div class="game-info">
-          <div class="game-name">Lily Pad Hopper</div>
-          <div class="game-desc">Hop across moonlit ponds, collect fireflies, and dodge snakes, crocs, and herons. A peaceful yet challenging adventure.</div>
-          <div class="game-tags">
-            <span class="tag">Ages 4+</span>
-            <span class="tag">Adventure</span>
-            <span class="tag">Single Player</span>
-          </div>
+        <div class="howto-step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Catch the good items</strong> — stars ⭐, gems 💎, fruits 🍎, butterflies 🦋</div>
         </div>
-        <div class="game-price">Coming Soon</div>
-      </div>
-
-      <div class="game-card coming-soon">
-        <div class="game-icon">🏗️☁️</div>
-        <div class="game-info">
-          <div class="game-name">Sky Builder</div>
-          <div class="game-desc">Stack blocks higher and higher! Time your drops perfectly, chain combos, and build a tower that reaches the clouds.</div>
-          <div class="game-tags">
-            <span class="tag">Ages 4+</span>
-            <span class="tag">Puzzle</span>
-            <span class="tag">Single Player</span>
-          </div>
+        <div class="howto-step">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Dodge the bad items</strong> — skulls 💀, spiders 🕷️, and bats 🦇 appear in later levels</div>
         </div>
-        <div class="game-price">Coming Soon</div>
+        <div class="howto-step">
+          <div class="step-num">4</div>
+          <div class="step-text"><strong>Grab power-ups</strong> — 🌟 widens basket, ❄️ slows items, 🛡️ blocks one hit</div>
+        </div>
+        <div class="howto-step">
+          <div class="step-num">5</div>
+          <div class="step-text"><strong>Beat your high score</strong> and climb the leaderboard!</div>
+        </div>
       </div>
     </section>
 
-    <section class="values-section">
-      <div class="section-title">Our Promise</div>
-      <h2 class="section-heading">What we believe in</h2>
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-icon">🔒</div>
-          <div class="value-title">Zero Data Collection</div>
-          <div class="value-desc">We don't collect, store, or share any personal information. Ever. Our games run entirely on your device.</div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">🚫</div>
-          <div class="value-title">No Ads</div>
-          <div class="value-desc">No banner ads, no video ads, no sponsored content. You pay once and play forever with zero interruptions.</div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">👨‍👩‍👧‍👦</div>
-          <div class="value-title">Kid Safe</div>
-          <div class="value-desc">COPPA compliant. No social features, no external links, no in-app purchases. Parents can hand over the phone with peace of mind.</div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">📶</div>
-          <div class="value-title">Works Offline</div>
-          <div class="value-desc">No internet required. Play on airplanes, road trips, or anywhere — our games work 100% offline.</div>
-        </div>
+    <section class="safety">
+      <div class="section-label">Parent Info</div>
+      <h2 class="section-heading">Safe for kids</h2>
+      <div class="safety-grid">
+        <div class="safety-item"><span class="safety-check">✓</span> No ads</div>
+        <div class="safety-item"><span class="safety-check">✓</span> No tracking</div>
+        <div class="safety-item"><span class="safety-check">✓</span> No in-app purchases</div>
+        <div class="safety-item"><span class="safety-check">✓</span> No internet needed</div>
+        <div class="safety-item"><span class="safety-check">✓</span> No social features</div>
+        <div class="safety-item"><span class="safety-check">✓</span> No external links</div>
+        <div class="safety-item"><span class="safety-cross">✕</span> No data collection</div>
+        <div class="safety-item"><span class="safety-cross">✕</span> No accounts required</div>
       </div>
     </section>
 
     <footer class="footer">
       <div class="footer-links">
-        <a href="/color-catcher">Color Catcher</a>
+        <a href="/">Star Pixel Games</a>
         <a href="/color-catcher/privacy">Privacy Policy</a>
         <a href="/color-catcher/support">Support</a>
-        <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
+        <a href="mailto:hello@starpixelgames.com" style="color:var(--accent);font-weight:600">hello@starpixelgames.com</a>
       </div>
       <p>&copy; 2026 Star Pixel Games. All rights reserved.</p>
     </footer>
