@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Catcher — Support</title>
+  <meta name="description" content="Get help with Color Catcher by Star Pixel Games. FAQ, troubleshooting, and contact information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #08090d;
+      --surface: #111318;
+      --border: #1e2430;
+      --text: #b8bec9;
+      --text-muted: #5c6370;
+      --heading: #f0f2f5;
+      --accent: #fbbf24;
+      --accent-dim: rgba(251, 191, 36, 0.08);
+      --green: #34d399;
+      --blue: #38bdf8;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0; opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .wrapper {
+      position: relative; z-index: 1;
+      max-width: 640px; margin: 0 auto; padding: 0 24px;
+    }
+
+    /* Nav */
+    .nav {
+      padding: 20px 0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--heading); text-decoration: none;
+    }
+
+    .nav-brand span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 16px; }
+
+    .nav-links a {
+      font-size: 13px; color: var(--text-muted);
+      text-decoration: none; font-weight: 600; transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin: 40px 0 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-icon { font-size: 48px; margin-bottom: 12px; display: block; }
+
+    .header-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(28px, 5vw, 36px);
+      font-weight: 700; color: var(--heading);
+      letter-spacing: -0.02em; margin-bottom: 8px;
+    }
+
+    .header-title span { color: var(--accent); }
+
+    .header-desc { font-size: 15px; color: var(--text-muted); max-width: 400px; margin: 0 auto; }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+      text-align: center; margin-bottom: 40px;
+    }
+
+    .contact-card h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--heading); margin-bottom: 8px;
+    }
+
+    .contact-card p { font-size: 14px; color: var(--text); margin-bottom: 16px; }
+
+    .contact-email {
+      display: inline-block;
+      padding: 12px 28px; border-radius: 12px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(251,191,36,.15);
+      color: var(--accent); font-weight: 700; font-size: 16px;
+      text-decoration: none; transition: background 0.2s;
+    }
+
+    .contact-email:hover { background: rgba(251,191,36,.15); }
+
+    .response-note {
+      font-size: 12px; color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* FAQ */
+    .faq-section {
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--accent); margin-bottom: 6px;
+    }
+
+    .section-heading {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 700; color: var(--heading);
+      letter-spacing: -0.02em; margin-bottom: 24px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 24px;
+      margin-bottom: 12px;
+    }
+
+    .faq-q {
+      font-size: 15px; font-weight: 700;
+      color: var(--heading); margin-bottom: 8px;
+    }
+
+    .faq-a { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+    .faq-a strong { color: var(--heading); }
+
+    /* Troubleshooting */
+    .trouble-section { margin-bottom: 40px; }
+
+    .trouble-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 22px;
+      margin-bottom: 10px;
+    }
+
+    .trouble-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+    .trouble-title {
+      font-size: 15px; font-weight: 700;
+      color: var(--heading); margin-bottom: 4px;
+    }
+
+    .trouble-desc { font-size: 13px; color: var(--text); line-height: 1.6; }
+
+    /* Footer */
+    .footer {
+      text-align: center; padding: 32px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted); font-size: 13px;
+    }
+
+    .footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
+    .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 480px) {
+      .wrapper { padding: 0 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <nav class="nav">
+      <a href="/" class="nav-brand">Star <span>Pixel</span> Games</a>
+      <div class="nav-links">
+        <a href="/color-catcher">Game</a>
+        <a href="/color-catcher/privacy">Privacy</a>
+      </div>
+    </nav>
+
+    <header class="header">
+      <span class="header-icon">💬</span>
+      <h1 class="header-title">Color Catcher <span>Support</span></h1>
+      <p class="header-desc">Need help? Check the FAQ below, or reach out directly.</p>
+    </header>
+
+    <div class="contact-card">
+      <h2>Contact Us</h2>
+      <p>For bugs, questions, feedback, or anything else — we'd love to hear from you.</p>
+      <a href="mailto:hello@starpixelgames.com" class="contact-email">hello@starpixelgames.com</a>
+      <p class="response-note">We typically respond within 24-48 hours</p>
+    </div>
+
+    <div class="faq-section">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-heading">Common questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">What ages is Color Catcher designed for?</div>
+        <div class="faq-a">Color Catcher is designed for children ages 4 and up, but players of all ages can enjoy it. The Easy difficulty is great for younger players, while Hard mode challenges older kids and adults.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Does the game need an internet connection?</div>
+        <div class="faq-a"><strong>No.</strong> Color Catcher works 100% offline. Play it on airplanes, road trips, or anywhere — no WiFi or data needed.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Does Color Catcher collect any data about my child?</div>
+        <div class="faq-a"><strong>No.</strong> We collect zero data. No personal info, no analytics, no tracking of any kind. The player name and scores are stored only on your device and are never sent anywhere. See our <a href="/color-catcher/privacy" style="color:var(--accent)">full privacy policy</a>.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Are there ads or in-app purchases?</div>
+        <div class="faq-a"><strong>No.</strong> Color Catcher is a one-time purchase. There are no ads, no in-app purchases, no subscriptions, and no premium upgrades. You get the full game.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can multiple kids play on the same device?</div>
+        <div class="faq-a"><strong>Yes!</strong> The local leaderboard lets multiple players add their name and avatar. Up to 10 scores are saved per difficulty level, so siblings and friends can compete for the top spot.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I reset the leaderboard?</div>
+        <div class="faq-a">Deleting and reinstalling the app will clear all saved scores and player profiles. A built-in reset option is planned for a future update.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What controls does the game support?</div>
+        <div class="faq-a">Touch/finger on phones and tablets, mouse on computers, and keyboard (arrow keys or A/D). All three control methods work at any time.</div>
+      </div>
+    </div>
+
+    <div class="trouble-section">
+      <div class="section-label">Troubleshooting</div>
+      <h2 class="section-heading">Common issues</h2>
+
+      <div class="trouble-item">
+        <div class="trouble-icon">🔇</div>
+        <div>
+          <div class="trouble-title">No sound</div>
+          <div class="trouble-desc">Make sure your device isn't on silent mode and the volume is turned up. Sound effects activate after your first tap/interaction with the game.</div>
+        </div>
+      </div>
+
+      <div class="trouble-item">
+        <div class="trouble-icon">🐌</div>
+        <div>
+          <div class="trouble-title">Game feels slow</div>
+          <div class="trouble-desc">The game starts with an 8-second warmup period at reduced speed. This is intentional to help you get oriented. Full speed kicks in shortly after.</div>
+        </div>
+      </div>
+
+      <div class="trouble-item">
+        <div class="trouble-icon">📱</div>
+        <div>
+          <div class="trouble-title">Touch controls not responding</div>
+          <div class="trouble-desc">Make sure you're sliding your finger on the game area (not above or below it). The basket follows your finger position directly.</div>
+        </div>
+      </div>
+
+      <div class="trouble-item">
+        <div class="trouble-icon">💾</div>
+        <div>
+          <div class="trouble-title">Scores not saving</div>
+          <div class="trouble-desc">Make sure you complete the name entry screen after each game. Scores are saved locally — they won't carry over if you reinstall the app.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card" style="margin-bottom: 0;">
+      <h2>Still need help?</h2>
+      <p>If your issue isn't covered above, send us a message and we'll get back to you.</p>
+      <a href="mailto:hello@starpixelgames.com" class="contact-email">hello@starpixelgames.com</a>
+    </div>
+
+    <footer class="footer">
+      <a href="/">Star Pixel Games</a>
+      <a href="/color-catcher">Color Catcher</a>
+      <a href="/color-catcher/privacy">Privacy Policy</a>
+      <br><br>
+      &copy; 2026 Star Pixel Games. All rights reserved.
+    </footer>
+
+  </div>
+</body>
+</html>
