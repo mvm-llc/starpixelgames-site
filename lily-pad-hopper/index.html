@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lily Pad Hopper — Hop, Explore & Collect! Coming Soon | Star Pixel Games</title>
+  <meta name="description" content="Lily Pad Hopper: hop across moonlit ponds, collect fireflies, and dodge snakes, crocs, and herons. A peaceful adventure game for kids ages 4+. Ad-free, offline, no tracking.">
+  <link rel="canonical" href="https://starpixelgames.com/lily-pad-hopper" />
+  <meta property="og:title" content="Lily Pad Hopper — Coming Soon | Star Pixel Games" />
+  <meta property="og:description" content="Hop across moonlit ponds, collect fireflies & dodge dangers. A peaceful adventure game for kids ages 4+. Ad-free, works offline." />
+  <meta property="og:image" content="https://starpixelgames.com/og-lily-pad-hopper.png" />
+  <meta property="og:url" content="https://starpixelgames.com/lily-pad-hopper" />
+  <meta property="og:site_name" content="Star Pixel Games" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lily Pad Hopper — Coming Soon | Star Pixel Games" />
+  <meta name="twitter:description" content="Hop across moonlit ponds, collect fireflies & dodge dangers. Ad-free, works offline. Ages 4+." />
+  <meta name="twitter:image" content="https://starpixelgames.com/og-lily-pad-hopper.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #08090d;
+      --surface: #111318;
+      --surface-2: #181b22;
+      --border: #1e2430;
+      --text: #b8bec9;
+      --text-muted: #5c6370;
+      --heading: #f0f2f5;
+      --accent: #fbbf24;
+      --accent-glow: rgba(251, 191, 36, 0.15);
+      --green: #34d399;
+      --blue: #38bdf8;
+      --pink: #f472b6;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0; opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      padding: 80px 0 48px;
+      position: relative;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(52,211,153,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .game-emoji { font-size: 72px; margin-bottom: 16px; display: block; }
+
+    .page-header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text);
+      font-weight: 500;
+      max-width: 520px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    /* Badges */
+    .badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .badge-gold { background: var(--accent-glow); border: 1px solid rgba(251,191,36,.15); color: var(--accent); }
+    .badge-green { background: rgba(52,211,153,.08); border: 1px solid rgba(52,211,153,.12); color: var(--green); }
+    .badge-blue { background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.12); color: var(--blue); }
+
+    /* Coming soon banner */
+    .coming-soon-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .coming-soon-banner h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .coming-soon-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Content */
+    .content { padding-bottom: 60px; }
+
+    .content h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      margin: 40px 0 16px;
+    }
+
+    .content p {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    .content a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .content a:hover { opacity: 0.8; }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    .footer-email {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .page-header { padding: 50px 0 32px; }
+      .game-emoji { font-size: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <a href="/" class="back-link">← Back to all games</a>
+      <span class="game-emoji">🐸🌿</span>
+      <h1>Lily Pad Hopper</h1>
+      <p class="tagline">Hop across moonlit ponds, collect fireflies, and dodge snakes, crocs, and herons. A peaceful yet challenging adventure game for kids ages 4+.</p>
+      <div class="badges">
+        <span class="badge badge-gold">🚫 No Ads</span>
+        <span class="badge badge-green">🔒 No Tracking</span>
+        <span class="badge badge-blue">📶 Works Offline</span>
+        <span class="badge badge-gold">🧒 Ages 4+</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="coming-soon-banner">
+        <h2>Coming Soon</h2>
+        <p>Lily Pad Hopper is in development. Want to know the moment it's ready? Email us at <a href="mailto:hello@starpixelgames.com">hello@starpixelgames.com</a> — we'll send one message, no spam, no tracking, just a launch alert.</p>
+      </div>
+
+      <h2>What to Expect</h2>
+      <p>Navigate a frog across beautifully illustrated ponds under the moonlight. Collect glowing fireflies to light your path while dodging crocodiles, snakes, and swooping herons. Like all Star Pixel Games, Lily Pad Hopper is completely ad-free, collects zero data, and works without an internet connection.</p>
+
+      <p><a href="/">← Back to all games</a></p>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher">Color Catcher</a>
+        <a href="/color-catcher/privacy">Privacy Policy</a>
+        <a href="/color-catcher/support">Support</a>
+        <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
+      </div>
+      <p>© 2025 Star Pixel Games. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
