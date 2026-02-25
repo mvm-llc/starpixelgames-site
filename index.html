@@ -78,19 +78,39 @@
       pointer-events: none;
     }
 
-    .logo-emoji { font-size: 64px; margin-bottom: 16px; display: block; }
-
-    .logo-text {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: clamp(36px, 7vw, 56px);
-      font-weight: 800;
-      color: var(--heading);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 12px;
+    /* Logo mark */
+    .logo-mark {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
     }
 
-    .logo-text span { color: var(--accent); }
+    .logo-mark svg {
+      width: 72px;
+      height: 72px;
+    }
+
+    .logo-text {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .logo-text .star-word { color: var(--accent); }
+
+    .logo-games {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
 
     .hero-sub {
       font-size: 18px;
@@ -250,6 +270,29 @@
       font-size: 13px;
     }
 
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-logo-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--heading);
+      letter-spacing: 0.5px;
+    }
+
+    .footer-logo-text .star-word { color: var(--accent); }
+
     .footer-links {
       display: flex;
       gap: 20px;
@@ -276,6 +319,7 @@
     @media (max-width: 600px) {
       .game-card { flex-direction: column; text-align: center; gap: 16px; padding: 24px; }
       .hero { padding: 50px 0 40px; }
+      .logo-mark svg { width: 56px; height: 56px; }
     }
   </style>
   <script type="application/ld+json">
@@ -284,7 +328,7 @@
     "@type": "Organization",
     "name": "Star Pixel Games",
     "url": "https://starpixelgames.com",
-    "logo": "https://starpixelgames.com/logo.png",
+    "logo": "https://starpixelgames.com/star-pixel-icon-512.png",
     "description": "Fun, safe, ad-free mobile games for kids. No tracking, no in-app purchases, works offline.",
     "email": "hello@starpixelgames.com",
     "foundingDate": "2026",
@@ -296,8 +340,27 @@
   <div class="container">
 
     <section class="hero">
-      <span class="logo-emoji">✨🎮✨</span>
-      <p class="logo-text">Star <span>Pixel</span> Games</p>
+      <!-- Pixel Star Logo -->
+      <div class="logo-mark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Star Pixel Games logo">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+      </div>
+      <p class="logo-text"><span class="star-word">Star</span> Pixel</p>
+      <p class="logo-games">Games</p>
       <h1 class="hero-sub">Fun, safe, ad-free games for kids. No tracking, no distractions — just play.</h1>
       <div class="badges">
         <span class="badge badge-gold">✦ No Ads</span>
@@ -381,6 +444,25 @@
     </section>
 
     <footer class="footer">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="footer-logo-text"><span class="star-word">Star</span> Pixel Games</span>
+      </div>
       <div class="footer-links">
         <a href="/color-catcher">Color Catcher</a>
         <a href="/about">About</a>
