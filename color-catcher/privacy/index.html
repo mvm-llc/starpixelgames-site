@@ -19,21 +19,26 @@
   <!-- Privacy Policy -->
   <link rel="canonical" href="https://starpixelgames.com/color-catcher/privacy" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --bg: #08090d;
       --surface: #111318;
+      --surface-2: #181b22;
       --border: #1e2430;
       --text: #b8bec9;
       --text-muted: #5c6370;
       --heading: #f0f2f5;
       --accent: #fbbf24;
+      --accent-glow: rgba(251, 191, 36, 0.15);
       --accent-dim: rgba(251, 191, 36, 0.08);
       --green: #34d399;
       --green-dim: rgba(52, 211, 153, 0.08);
+      --blue: #38bdf8;
+      --pink: #f472b6;
+      --purple: #a78bfa;
     }
 
     body {
@@ -42,6 +47,7 @@
       color: var(--text);
       line-height: 1.7;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -51,35 +57,19 @@
       pointer-events: none;
     }
 
-    .wrapper {
-      position: relative; z-index: 1;
-      max-width: 640px; margin: 0 auto; padding: 0 24px;
-    }
-
-    /* Nav */
-    .nav {
-      padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-brand {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 16px; font-weight: 700;
-      color: var(--heading); text-decoration: none;
-    }
-
-    .nav-brand span { color: var(--accent); }
-
-    .nav-links { display: flex; gap: 16px; }
-
-    .nav-links a {
-      font-size: 13px; color: var(--text-muted);
-      text-decoration: none; font-weight: 600; transition: color 0.2s;
-    }
-
+    /* ===== GLOBAL NAV (do not edit) ===== */
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-star { width: 22px; height: 22px; }
+    .nav-brand-text { font-family: 'DM Sans', -apple-system, sans-serif; font-weight: 700; font-size: 16px; color: var(--heading); letter-spacing: 0.3px; }
+    .nav-brand-text .star-word { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
+
+    /* ===== CONTAINER ===== */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
     /* Header */
     .header {
@@ -188,54 +178,56 @@
 
     .contact-email:hover { background: rgba(251,191,36,.15); }
 
-    /* Footer */
-    .footer {
-      text-align: center; margin-top: 56px;
-      padding: 32px 0; border-top: 1px solid var(--border);
-      color: var(--text-muted); font-size: 13px;
-    }
-
-    .footer a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
-    .footer a:hover { color: var(--accent); }
-    .footer-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .footer-logo svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .footer-logo-text {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--heading);
-      letter-spacing: 0.5px;
-    }
-
+    /* ===== FOOTER (do not edit) ===== */
+    .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
+    .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo svg { width: 24px; height: 24px; }
+    .footer-logo-text { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; color: var(--heading); letter-spacing: 0.5px; }
     .footer-logo-text .star-word { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-email { color: var(--accent); text-decoration: none; font-weight: 600; }
 
-    @media (max-width: 480px) {
-      .wrapper { padding: 0 18px; }
-      .tldr { padding: 20px 22px; }
+    @media (max-width: 600px) {
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
 
-    <nav class="nav">
-      <a href="/" class="nav-brand">Star <span>Pixel</span> Games</a>
+  <!-- ===== GLOBAL NAV (same on every page, do not edit) ===== -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="nav-star" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="nav-brand-text"><span class="star-word">Star</span> Pixel Games</span>
+      </a>
       <div class="nav-links">
-        <a href="/color-catcher">Game</a>
+        <a href="/#games">Games</a>
+        <a href="/about">About</a>
         <a href="/color-catcher/support">Support</a>
       </div>
-    </nav>
+    </div>
+  </nav>
+
+  <div class="container">
 
     <header class="header">
       <span class="app-icon">⭐🧺⭐</span>
@@ -332,35 +324,36 @@
       <a href="mailto:hello@starpixelgames.com" class="contact-email">hello@starpixelgames.com</a>
     </div>
 
+    <!-- ===== FOOTER (same on every page, do not edit) ===== -->
     <footer class="footer">
-  <div class="footer-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
-      <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-      <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-    </svg>
-    <span class="footer-logo-text"><span class="star-word">Star</span> Pixel Games</span>
-  </div>
-  <div class="footer-links">
-    <a href="/color-catcher">Color Catcher</a>
-    <a href="/about">About</a>
-    <a href="/color-catcher/privacy">Privacy Policy</a>
-    <a href="/color-catcher/support">Support</a>
-    <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
-  </div>
-  <p>© 2026 Star Pixel Games. All rights reserved.</p>
-  </footer>
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="footer-logo-text"><span class="star-word">Star</span> Pixel Games</span>
+      </div>
+      <div class="footer-links">
+        <a href="/color-catcher">Color Catcher</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/privacy">Privacy Policy</a>
+        <a href="/color-catcher/support">Support</a>
+        <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
+      </div>
+      <p>&copy; 2026 Star Pixel Games. All rights reserved.</p>
+    </footer>
   </div>
 </body>
 </html>
