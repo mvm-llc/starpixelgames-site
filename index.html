@@ -14,7 +14,6 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Star Pixel Games" />
-  
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Star Pixel Games — Fun, Safe, Ad-Free Games for Kids" />
@@ -24,7 +23,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Pixel Games — Fun Games for Kids</title>
   <meta name="description" content="Safe, ad-free mobile games for kids ages 4+. Zero tracking, zero in-app purchases, works 100% offline. Pay once, play forever — from $0.99." />
-  <!-- Homepage -->
   <link rel="canonical" href="https://starpixelgames.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
@@ -63,15 +61,21 @@
       pointer-events: none;
     }
 
-    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    /* ===== GLOBAL NAV ===== */
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-star { width: 22px; height: 22px; }
+    .nav-brand-text { font-family: 'DM Sans', -apple-system, sans-serif; font-weight: 700; font-size: 16px; color: var(--heading); letter-spacing: 0.3px; }
+    .nav-brand-text .star-word { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
     /* Hero */
-    .hero {
-      text-align: center;
-      padding: 80px 0 60px;
-      position: relative;
-    }
-
+    .hero { text-align: center; padding: 80px 0 60px; position: relative; }
     .hero::before {
       content: '';
       position: absolute;
@@ -81,17 +85,8 @@
       pointer-events: none;
     }
 
-    /* Logo mark */
-    .logo-mark {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .logo-mark svg {
-      width: 72px;
-      height: 72px;
-    }
+    .logo-mark { display: flex; justify-content: center; margin-bottom: 20px; }
+    .logo-mark svg { width: 72px; height: 72px; }
 
     .logo-text {
       font-family: 'DM Sans', -apple-system, sans-serif;
@@ -102,227 +97,74 @@
       line-height: 1.15;
       margin-bottom: 4px;
     }
-
     .logo-text .star-word { color: var(--accent); }
 
     .logo-games {
       font-family: 'DM Sans', -apple-system, sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 20px;
+      font-size: 14px; font-weight: 400;
+      letter-spacing: 5px; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 20px;
     }
 
     .hero-sub {
-      font-size: 18px;
-      color: var(--text-muted);
-      font-weight: 500;
-      max-width: 440px;
-      margin: 0 auto 32px;
+      font-size: 18px; color: var(--text-muted); font-weight: 500;
+      max-width: 440px; margin: 0 auto 32px;
     }
 
-    .badges {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 24px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
+    .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 24px; font-size: 13px; font-weight: 600; }
     .badge-gold { background: var(--accent-glow); border: 1px solid rgba(251,191,36,.15); color: var(--accent); }
     .badge-green { background: rgba(52,211,153,.08); border: 1px solid rgba(52,211,153,.12); color: var(--green); }
     .badge-blue { background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.12); color: var(--blue); }
 
     /* Games section */
-    .section-title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .section-heading {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: clamp(24px, 4vw, 32px);
-      font-weight: 700;
-      color: var(--heading);
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
-    }
-
+    .section-title { font-family: 'Fraunces', Georgia, serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
+    .section-heading { font-family: 'Fraunces', Georgia, serif; font-size: clamp(24px, 4vw, 32px); font-weight: 700; color: var(--heading); letter-spacing: -0.02em; margin-bottom: 32px; }
     .games-section { padding: 40px 0 60px; }
 
     .game-card {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      margin-bottom: 20px;
-      text-decoration: none;
-      color: inherit;
+      display: flex; gap: 28px; align-items: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px; margin-bottom: 20px;
+      text-decoration: none; color: inherit;
       transition: border-color 0.3s, transform 0.2s;
     }
-
-    .game-card:hover {
-      border-color: rgba(251,191,36,.2);
-      transform: translateY(-2px);
-    }
-
+    .game-card:hover { border-color: rgba(251,191,36,.2); transform: translateY(-2px); }
     .game-icon { font-size: 56px; flex-shrink: 0; }
-
     .game-info { flex: 1; }
-
-    .game-name {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 4px;
-    }
-
-    .game-desc {
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
+    .game-name { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--heading); margin-bottom: 4px; }
+    .game-desc { font-size: 14px; color: var(--text); margin-bottom: 10px; line-height: 1.6; }
     .game-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
-    .tag {
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 11px;
-      font-weight: 600;
-      background: var(--surface-2);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-    }
-
-    .game-price {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .coming-soon {
-      opacity: 0.5;
-    }
-
-    .coming-soon .game-price {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
+    .tag { padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
+    .game-price { font-size: 20px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+    .coming-soon { opacity: 0.5; }
+    .coming-soon .game-price { font-size: 13px; color: var(--text-muted); font-weight: 600; }
 
     /* Values */
-    .values-section {
-      padding: 40px 0 60px;
-      border-top: 1px solid var(--border);
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .value-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-    }
-
+    .values-section { padding: 40px 0 60px; border-top: 1px solid var(--border); }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
     .value-icon { font-size: 28px; margin-bottom: 10px; }
-
-    .value-title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 6px;
-    }
-
+    .value-title { font-family: 'Fraunces', Georgia, serif; font-size: 16px; font-weight: 700; color: var(--heading); margin-bottom: 6px; }
     .value-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
     /* Footer */
-    .footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .footer-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .footer-logo svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .footer-logo-text {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--heading);
-      letter-spacing: 0.5px;
-    }
-
+    .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
+    .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo svg { width: 24px; height: 24px; }
+    .footer-logo-text { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; color: var(--heading); letter-spacing: 0.5px; }
     .footer-logo-text .star-word { color: var(--accent); }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
     .footer-links a:hover { color: var(--accent); }
-
-    .footer-email {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
+    .footer-email { color: var(--accent); text-decoration: none; font-weight: 600; }
 
     @media (max-width: 600px) {
       .game-card { flex-direction: column; text-align: center; gap: 16px; padding: 24px; }
       .hero { padding: 50px 0 40px; }
       .logo-mark svg { width: 56px; height: 56px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; }
     }
   </style>
   <script type="application/ld+json">
@@ -340,27 +182,26 @@
   </script>
 </head>
 <body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="nav-star" aria-hidden="true"><rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/></svg>
+        <span class="nav-brand-text"><span class="star-word">Star</span> Pixel</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#games">Games</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/support">Support</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
 
     <section class="hero">
-      <!-- Pixel Star Logo -->
       <div class="logo-mark">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Star Pixel Games logo">
-          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Star Pixel Games logo"><rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/></svg>
       </div>
       <p class="logo-text"><span class="star-word">Star</span> Pixel</p>
       <p class="logo-games">Games</p>
@@ -372,7 +213,7 @@
       </div>
     </section>
 
-    <section class="games-section">
+    <section class="games-section" id="games">
       <div class="section-title">Our Games</div>
       <h2 class="section-heading">Made for kids, loved by everyone</h2>
 
@@ -448,22 +289,7 @@
 
     <footer class="footer">
       <div class="footer-logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
-          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true"><rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/></svg>
         <span class="footer-logo-text"><span class="star-word">Star</span> Pixel Games</span>
       </div>
       <div class="footer-links">
@@ -473,7 +299,7 @@
         <a href="/color-catcher/support">Support</a>
         <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
       </div>
-      <p>© 2026 Star Pixel Games. All rights reserved.</p>
+      <p>&copy; 2026 Star Pixel Games. All rights reserved.</p>
     </footer>
   </div>
 </body>
