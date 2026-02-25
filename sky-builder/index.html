@@ -1,5 +1,241 @@
-<header class="page-header">
-      <a href="/" class="back-link">← Back to all games</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/star-pixel-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/star-pixel-icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/star-pixel-icon-16.png">
+  <link rel="apple-touch-icon" href="/star-pixel-icon-180.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky Builder — Stack, Build & Reach the Clouds! Coming Soon | Star Pixel Games</title>
+  <meta name="description" content="Sky Builder: stack blocks, chain combos & build a tower to the clouds! A fun puzzle game for kids ages 4+. Ad-free, works offline, no tracking. By Star Pixel Games.">
+  <link rel="canonical" href="https://starpixelgames.com/sky-builder" />
+  <meta property="og:title" content="Sky Builder — Coming Soon | Star Pixel Games" />
+  <meta property="og:description" content="Stack blocks & build a tower to the clouds! A fun puzzle game for kids ages 4+. Ad-free, works offline, no tracking." />
+  <meta property="og:image" content="https://starpixelgames.com/og-sky-builder.png" />
+  <meta property="og:url" content="https://starpixelgames.com/sky-builder" />
+  <meta property="og:site_name" content="Star Pixel Games" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sky Builder — Coming Soon | Star Pixel Games" />
+  <meta name="twitter:description" content="Stack blocks & build a tower to the clouds! Ad-free, works offline. Ages 4+." />
+  <meta name="twitter:image" content="https://starpixelgames.com/og-sky-builder.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #08090d;
+      --surface: #111318;
+      --surface-2: #181b22;
+      --border: #1e2430;
+      --text: #b8bec9;
+      --text-muted: #5c6370;
+      --heading: #f0f2f5;
+      --accent: #fbbf24;
+      --accent-glow: rgba(251, 191, 36, 0.15);
+      --accent-dim: rgba(251, 191, 36, 0.08);
+      --green: #34d399;
+      --green-dim: rgba(52, 211, 153, 0.08);
+      --blue: #38bdf8;
+      --pink: #f472b6;
+      --purple: #a78bfa;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0; opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* ===== GLOBAL NAV (do not edit) ===== */
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-star { width: 22px; height: 22px; }
+    .nav-brand-text { font-family: 'DM Sans', -apple-system, sans-serif; font-weight: 700; font-size: 16px; color: var(--heading); letter-spacing: 0.3px; }
+    .nav-brand-text .star-word { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ===== CONTAINER ===== */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    .page-header {
+      text-align: center;
+      padding: 80px 0 48px;
+      position: relative;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(56,189,248,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .game-emoji { font-size: 72px; margin-bottom: 16px; display: block; }
+
+    .page-header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text);
+      font-weight: 500;
+      max-width: 520px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .badge-gold { background: var(--accent-glow); border: 1px solid rgba(251,191,36,.15); color: var(--accent); }
+    .badge-green { background: rgba(52,211,153,.08); border: 1px solid rgba(52,211,153,.12); color: var(--green); }
+    .badge-blue { background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.12); color: var(--blue); }
+
+    .coming-soon-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .coming-soon-banner h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .coming-soon-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .content { padding-bottom: 60px; }
+
+    .content h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      margin: 40px 0 16px;
+    }
+
+    .content p {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    .content a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .content a:hover { opacity: 0.8; }
+
+    /* ===== FOOTER (do not edit) ===== */
+    .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
+    .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo svg { width: 24px; height: 24px; }
+    .footer-logo-text { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; color: var(--heading); letter-spacing: 0.5px; }
+    .footer-logo-text .star-word { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-email { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== GLOBAL NAV (same on every page, do not edit) ===== -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="nav-star" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="nav-brand-text"><span class="star-word">Star</span> Pixel Games</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#games">Games</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/support">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <header class="page-header">
       <span class="game-emoji">🏗️☁️</span>
       <h1>Sky Builder</h1>
       <p class="tagline">Stack blocks higher and higher! Time your drops perfectly, chain combos, and build a tower that reaches the clouds. A fun puzzle game for kids ages 4+.</p>
@@ -22,5 +258,38 @@
       <h2>What to Expect</h2>
       <p>Test your timing and precision as you stack blocks into a towering structure. Chain perfect drops for combos and watch your tower soar into the clouds. Like all Star Pixel Games, Sky Builder is completely ad-free, collects zero data, and works 100% offline.</p>
 
-      <p><a href="/">← Back to all games</a></p>
     </main>
+
+    <!-- ===== FOOTER (same on every page, do not edit) ===== -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="footer-logo-text"><span class="star-word">Star</span> Pixel Games</span>
+      </div>
+      <div class="footer-links">
+        <a href="/color-catcher">Color Catcher</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/privacy">Privacy Policy</a>
+        <a href="/color-catcher/support">Support</a>
+        <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
+      </div>
+      <p>&copy; 2026 Star Pixel Games. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
