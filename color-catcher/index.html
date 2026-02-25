@@ -325,6 +325,27 @@
     }
 
     .footer-links a:hover { color: var(--accent); }
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-logo-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--heading);
+      letter-spacing: 0.5px;
+    }
+    .footer-logo-text .star-word { color: var(--accent); }
 
     @media (max-width: 500px) {
       .safety-grid { grid-template-columns: 1fr; }
@@ -466,12 +487,31 @@
     </section>
 
     <footer class="footer">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="footer-logo-text"><span class="star-word">Star</span> Pixel Games</span>
+      </div>
       <div class="footer-links">
-        <a href="/">Star Pixel Games</a>
+        <a href="/color-catcher">Color Catcher</a>
         <a href="/about">About</a>
         <a href="/color-catcher/privacy">Privacy Policy</a>
         <a href="/color-catcher/support">Support</a>
-        <a href="mailto:hello@starpixelgames.com" style="color:var(--accent);font-weight:600">hello@starpixelgames.com</a>
+        <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
       </div>
       <p>© 2026 Star Pixel Games. All rights reserved.</p>
     </footer>
