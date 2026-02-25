@@ -204,7 +204,28 @@
       text-decoration: none;
       font-weight: 600;
     }
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
 
+    .footer-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-logo-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--heading);
+      letter-spacing: 0.5px;
+    }
+
+    .footer-logo-text .star-word { color: var(--accent); }
     @media (max-width: 600px) {
       .page-header { padding: 50px 0 32px; }
     }
