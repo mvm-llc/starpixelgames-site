@@ -5,7 +5,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/star-pixel-icon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/star-pixel-icon-16.png">
   <link rel="apple-touch-icon" href="/star-pixel-icon-180.png">
-  <meta charset="UTF-8">
+
+  meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lily Pad Hopper — Hop, Explore & Collect! Coming Soon | Star Pixel Games</title>
   <meta name="description" content="Lily Pad Hopper: hop across moonlit ponds, collect fireflies, and dodge snakes, crocs, and herons. A peaceful adventure game for kids ages 4+. Ad-free, offline, no tracking.">
@@ -35,9 +36,12 @@
       --heading: #f0f2f5;
       --accent: #fbbf24;
       --accent-glow: rgba(251, 191, 36, 0.15);
+      --accent-dim: rgba(251, 191, 36, 0.08);
       --green: #34d399;
+      --green-dim: rgba(52, 211, 153, 0.08);
       --blue: #38bdf8;
       --pink: #f472b6;
+      --purple: #a78bfa;
     }
 
     body {
@@ -56,7 +60,19 @@
       pointer-events: none;
     }
 
-    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    /* ===== GLOBAL NAV (do not edit) ===== */
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-star { width: 22px; height: 22px; }
+    .nav-brand-text { font-family: 'DM Sans', -apple-system, sans-serif; font-weight: 700; font-size: 16px; color: var(--heading); letter-spacing: 0.3px; }
+    .nav-brand-text .star-word { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ===== CONTAINER ===== */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
     /* Header */
     .page-header {
@@ -73,20 +89,6 @@
       background: radial-gradient(ellipse, rgba(52,211,153,.06) 0%, transparent 70%);
       pointer-events: none;
     }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 32px;
-      transition: color 0.2s;
-    }
-
-    .back-link:hover { color: var(--accent); }
 
     .game-emoji { font-size: 72px; margin-bottom: 16px; display: block; }
 
@@ -187,69 +189,58 @@
 
     .content a:hover { opacity: 0.8; }
 
-    /* Footer */
-    .footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--accent); }
-
-    .footer-email {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .footer-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .footer-logo svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .footer-logo-text {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--heading);
-      letter-spacing: 0.5px;
-    }
+    /* ===== FOOTER (do not edit) ===== */
+    .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
+    .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo svg { width: 24px; height: 24px; }
+    .footer-logo-text { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; color: var(--heading); letter-spacing: 0.5px; }
     .footer-logo-text .star-word { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-email { color: var(--accent); text-decoration: none; font-weight: 600; }
 
     @media (max-width: 600px) {
-      .page-header { padding: 50px 0 32px; }
-      .game-emoji { font-size: 56px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ===== GLOBAL NAV (same on every page, do not edit) ===== -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="nav-star" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="nav-brand-text"><span class="star-word">Star</span> Pixel Games</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#games">Games</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/support">Support</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
+
     <header class="page-header">
-      <a href="/" class="back-link">← Back to all games</a>
       <span class="game-emoji">🐸🌿</span>
       <h1>Lily Pad Hopper</h1>
       <p class="tagline">Hop across moonlit ponds, collect fireflies, and dodge snakes, crocs, and herons. A peaceful yet challenging adventure game for kids ages 4+.</p>
@@ -270,9 +261,9 @@
       <h2>What to Expect</h2>
       <p>Navigate a frog across beautifully illustrated ponds under the moonlight. Collect glowing fireflies to light your path while dodging crocodiles, snakes, and swooping herons. Like all Star Pixel Games, Lily Pad Hopper is completely ad-free, collects zero data, and works without an internet connection.</p>
 
-      <p><a href="/">← Back to all games</a></p>
     </main>
 
+    <!-- ===== FOOTER (same on every page, do not edit) ===== -->
     <footer class="footer">
       <div class="footer-logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
@@ -300,7 +291,7 @@
         <a href="/color-catcher/support">Support</a>
         <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
       </div>
-      <p>© 2026 Star Pixel Games. All rights reserved.</p>
+      <p>&copy; 2026 Star Pixel Games. All rights reserved.</p>
     </footer>
   </div>
 </body>
