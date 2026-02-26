@@ -148,6 +148,81 @@
     .value-title { font-family: 'Fraunces', Georgia, serif; font-size: 16px; font-weight: 700; color: var(--heading); margin-bottom: 6px; }
     .value-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
+    /* Newsletter signup */
+    .newsletter-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .newsletter-box h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 8px;
+    }
+
+    .newsletter-box p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--heading);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input[type="email"]::placeholder { color: var(--text-muted); }
+    .newsletter-form input[type="email"]:focus { border-color: var(--accent); }
+
+    .newsletter-form button {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .newsletter-form button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
     /* Footer */
     .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
     .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 16px; }
@@ -286,7 +361,15 @@
         </div>
       </div>
     </section>
-
+    <div class="newsletter-box">
+      <h3>Stay in the loop</h3>
+      <p>Get notified about new game launches and updates. Low-frequency, no spam — ever.</p>
+      <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/star_pixel_games" method="post">
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Unsubscribe anytime. We don't track opens or clicks.</p>
+    </div>
     <footer class="footer">
       <div class="footer-logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true"><rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/></svg>
