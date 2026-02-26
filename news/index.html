@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/star-pixel-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/star-pixel-icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/star-pixel-icon-16.png">
+  <link rel="apple-touch-icon" href="/star-pixel-icon-180.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News — Star Pixel Games</title>
+  <meta name="description" content="Latest news and updates from Star Pixel Games. Game launches, updates, and behind-the-scenes stories from our indie studio.">
+  <link rel="canonical" href="https://starpixelgames.com/news" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://starpixelgames.com/news" />
+  <meta property="og:title" content="News — Star Pixel Games" />
+  <meta property="og:description" content="Latest news and updates from Star Pixel Games." />
+  <meta property="og:image" content="https://starpixelgames.com/og-homepage.png" />
+  <meta property="og:site_name" content="Star Pixel Games" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="News — Star Pixel Games" />
+  <meta name="twitter:description" content="Latest news and updates from Star Pixel Games." />
+  <meta name="twitter:image" content="https://starpixelgames.com/og-homepage.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #08090d;
+      --surface: #111318;
+      --surface-2: #181b22;
+      --border: #1e2430;
+      --text: #b8bec9;
+      --text-muted: #5c6370;
+      --heading: #f0f2f5;
+      --accent: #fbbf24;
+      --accent-glow: rgba(251, 191, 36, 0.15);
+      --accent-dim: rgba(251, 191, 36, 0.08);
+      --green: #34d399;
+      --green-dim: rgba(52, 211, 153, 0.08);
+      --blue: #38bdf8;
+      --pink: #f472b6;
+      --purple: #a78bfa;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0; opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* ===== GLOBAL NAV (do not edit) ===== */
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-star { width: 22px; height: 22px; }
+    .nav-brand-text { font-family: 'DM Sans', -apple-system, sans-serif; font-weight: 700; font-size: 16px; color: var(--heading); letter-spacing: 0.3px; }
+    .nav-brand-text .star-word { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ===== CONTAINER ===== */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    .page-header {
+      text-align: center;
+      padding: 80px 0 48px;
+      position: relative;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(251,191,36,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800; color: var(--heading);
+      letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px;
+    }
+
+    .page-header .subtitle {
+      font-size: 18px; color: var(--text-muted); font-weight: 500;
+      max-width: 480px; margin: 0 auto;
+    }
+
+    .content { padding-bottom: 60px; }
+
+    /* News article card */
+    .news-article {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: border-color 0.2s;
+    }
+
+    .news-article:hover { border-color: rgba(251, 191, 36, 0.3); }
+
+    .news-date {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .news-article h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .news-article p {
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+
+    .news-article p:last-of-type { margin-bottom: 0; }
+    .news-article strong { color: var(--heading); font-weight: 600; }
+    .news-article a { color: var(--accent); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+    .news-article a:hover { opacity: 0.8; }
+
+    .news-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .news-tag {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    /* Newsletter signup */
+    .newsletter-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .newsletter-box h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 8px;
+    }
+
+    .newsletter-box p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--heading);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input[type="email"]::placeholder { color: var(--text-muted); }
+    .newsletter-form input[type="email"]:focus { border-color: var(--accent); }
+
+    .newsletter-form button {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .newsletter-form button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* ===== FOOTER (do not edit) ===== */
+    .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
+    .footer-logo { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-logo svg { width: 24px; height: 24px; }
+    .footer-logo-text { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; color: var(--heading); letter-spacing: 0.5px; }
+    .footer-logo-text .star-word { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-email { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== GLOBAL NAV (same on every page, do not edit) ===== -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="nav-star" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="nav-brand-text"><span class="star-word">Star</span> Pixel Games</span>
+      </a>
+      <div class="nav-links">
+        <a href="/#games">Games</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/support">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <header class="page-header">
+      <h1>News</h1>
+      <p class="subtitle">Updates, launches, and stories from Star Pixel Games.</p>
+    </header>
+
+    <main class="content">
+
+      <article class="news-article">
+        <div class="news-date">February 2026</div>
+        <h2>Introducing Color Catcher — Our First Game</h2>
+        <p>We're thrilled to announce the launch of <strong>Color Catcher</strong>, a fun catching game for kids ages 4 and up. Guide your basket to catch falling stars, gems, treats, and surprises while dodging obstacles.</p>
+        <p>Color Catcher was built with one goal: <strong>let kids play without parents worrying.</strong> That means zero ads, zero data collection, no in-app purchases, and full offline support. One price — $0.99 — and you're done.</p>
+        <p>Three difficulty levels grow with your child, from Easy (simple catching, slow pace) to Hard (faster drops, more obstacles, and power-ups to master). A local leaderboard lets siblings and friends compete, and player profiles mean everyone gets their own space.</p>
+        <p>Color Catcher coming soon on <strong>Android</strong> and <strong>iOS</strong>. Learn more on the <a href="/color-catcher">Color Catcher page</a>.</p>
+        <div class="news-tags">
+          <span class="news-tag">Launch</span>
+          <span class="news-tag">Color Catcher</span>
+          <span class="news-tag">Android</span>
+          <span class="news-tag">iOS</span>
+        </div>
+      </article>
+
+      <article class="news-article">
+        <div class="news-date">Coming Soon</div>
+        <h2>Next Up: Lily Pad Hopper &amp; Sky Builder</h2>
+        <p>Two more games are in the works. <a href="/lily-pad-hopper">Lily Pad Hopper</a> is a hop-and-explore adventure, and <a href="/sky-builder">Sky Builder</a> is a creative stacking challenge. Both follow our same principles: no ads, no tracking, offline-first, built for kids.</p>
+        <p>Follow us for updates as we get closer to launch.</p>
+        <div class="news-tags">
+          <span class="news-tag">Coming Soon</span>
+          <span class="news-tag">Lily Pad Hopper</span>
+          <span class="news-tag">Sky Builder</span>
+        </div>
+      </article>
+
+      <!-- Newsletter signup -->
+      <div class="newsletter-box">
+        <h3>Stay in the loop</h3>
+        <p>Get notified about new game launches and updates. Low-frequency, no spam — ever.</p>
+        <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/star_pixel_games" method="post" id="newsletter-form">
+          <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-note">No spam. Unsubscribe anytime. We don't track opens or clicks.</p>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+          <rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/>
+        </svg>
+        <span class="footer-logo-text"><span class="star-word">Star</span> Pixel Games</span>
+      </div>
+      <div class="footer-links">
+        <a href="/color-catcher">Color Catcher</a>
+        <a href="/news">News</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/privacy">Privacy Policy</a>
+        <a href="/color-catcher/support">Support</a>
+        <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a>
+      </div>
+      <p>&copy; 2026 Star Pixel Games. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
