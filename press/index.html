@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/star-pixel-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/star-pixel-icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/star-pixel-icon-16.png">
+  <link rel="apple-touch-icon" href="/star-pixel-icon-180.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://starpixelgames.com/press" />
+  <meta property="og:title" content="Press Kit — Star Pixel Games" />
+  <meta property="og:description" content="Press kit for Star Pixel Games and Color Catcher. Download logos, screenshots, and brand assets." />
+  <meta property="og:image" content="https://starpixelgames.com/og-homepage.png" />
+  <meta property="og:site_name" content="Star Pixel Games" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Press Kit — Star Pixel Games" />
+  <meta name="twitter:description" content="Press kit for Star Pixel Games and Color Catcher." />
+  <meta name="twitter:image" content="https://starpixelgames.com/og-homepage.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press Kit — Star Pixel Games</title>
+  <meta name="description" content="Press kit for Star Pixel Games and Color Catcher. Download logos, screenshots, app icons, and brand assets. Media inquiries welcome.">
+  <link rel="canonical" href="https://starpixelgames.com/press" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #08090d;
+      --surface: #111318;
+      --surface-2: #181b22;
+      --border: #1e2430;
+      --text: #b8bec9;
+      --text-muted: #5c6370;
+      --heading: #f0f2f5;
+      --accent: #fbbf24;
+      --accent-glow: rgba(251, 191, 36, 0.15);
+      --green: #10B981;
+      --blue: #38bdf8;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0; opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .site-nav { padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-star { width: 22px; height: 22px; }
+    .nav-brand-text { font-weight: 700; font-size: 16px; color: var(--heading); letter-spacing: 0.3px; }
+    .nav-brand-text .star-word { color: var(--accent); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    .header { text-align: center; padding: 60px 0 40px; }
+    .header-icon { font-size: 48px; display: block; margin-bottom: 12px; }
+    .header-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 5vw, 36px); font-weight: 700; color: var(--heading); margin-bottom: 8px; }
+    .header-title span { color: var(--accent); }
+    .header-desc { font-size: 16px; color: var(--text-muted); max-width: 480px; margin: 0 auto; }
+
+    .section-label { font-family: 'Fraunces', Georgia, serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
+    .section-heading { font-family: 'Fraunces', Georgia, serif; font-size: clamp(20px, 4vw, 26px); font-weight: 700; color: var(--heading); letter-spacing: -0.02em; margin-bottom: 20px; }
+
+    .divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+    /* Fact Sheet */
+    .fact-sheet { margin-bottom: 40px; }
+    .fact-grid { display: grid; grid-template-columns: 140px 1fr; gap: 8px 20px; font-size: 14px; }
+    .fact-label { font-weight: 700; color: var(--heading); }
+    .fact-value { color: var(--text); }
+    .fact-value a { color: var(--accent); text-decoration: none; }
+    .fact-value a:hover { text-decoration: underline; }
+
+    /* Store badges in fact sheet */
+    .store-links { display: flex; gap: 12px; margin-top: 4px; flex-wrap: wrap; }
+    .store-links a img { height: 36px; }
+
+    /* Features list */
+    .features-list { list-style: none; padding: 0; }
+    .features-list li { padding: 6px 0; font-size: 14px; color: var(--text); }
+    .features-list li::before { content: '✓ '; color: var(--green); font-weight: 700; }
+
+    /* Brand colors */
+    .color-swatches { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0 20px; }
+    .swatch { display: flex; align-items: center; gap: 8px; }
+    .swatch-color { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); }
+    .swatch-label { font-size: 12px; font-weight: 600; color: var(--heading); }
+    .swatch-hex { font-size: 11px; color: var(--text-muted); font-family: monospace; }
+
+    /* Contact box */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .contact-box h3 { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 700; color: var(--heading); margin-bottom: 8px; }
+    .contact-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+    .contact-email {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px 24px;
+      border: 1px solid rgba(251,191,36,.2);
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .contact-email:hover { background: var(--accent-glow); }
+
+    /* Boilerplate */
+    .boilerplate {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* Assets note */
+    .assets-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      font-size: 14px;
+      color: var(--text);
+      margin: 16px 0;
+    }
+    .assets-note strong { color: var(--heading); }
+
+    /* Footer */
+    .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-email { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .fact-grid { grid-template-columns: 1fr; gap: 4px; }
+      .fact-label { margin-top: 10px; }
+      .header { padding: 40px 0 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="nav-star" aria-hidden="true"><rect x="37.6" y="0" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="20.4" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="-3.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="78.4" y="40.8" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="37.6" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="61.2" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="17.2" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/><rect x="58" y="81.6" width="16.8" height="16.8" rx="3.36" fill="#FBBF24"/></svg>
+        <span class="nav-brand-text"><span class="star-word">Star</span> Pixel Games</span>
+      </a>
+      <div class="nav-links">
+        <a href="/color-catcher">Game</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/support">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <header class="header">
+      <span class="header-icon">📰</span>
+      <h1 class="header-title">Press <span>Kit</span></h1>
+      <p class="header-desc">Everything journalists, bloggers, and reviewers need to write about Color Catcher and Star Pixel Games.</p>
+    </header>
+
+    <main>
+
+      <!-- FACT SHEET -->
+      <section class="fact-sheet">
+        <div class="section-label">Fact Sheet</div>
+        <h2 class="section-heading">Color Catcher — Kids Game</h2>
+        <div class="fact-grid">
+          <div class="fact-label">Developer</div>
+          <div class="fact-value">Star Pixel Games (Van Melkebeke LLC)</div>
+
+          <div class="fact-label">Release Date</div>
+          <div class="fact-value">March 2026</div>
+
+          <div class="fact-label">Platforms</div>
+          <div class="fact-value">
+            iOS (iPhone & iPad) · Android
+            <div class="store-links">
+              <a href="https://apps.apple.com/us/app/color-catcher-kids-game/id6760410995" target="_blank" rel="noopener noreferrer">
+                <img src="/app-store-badge.svg" alt="Download on the App Store">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.starpixelgames.colorcatcher" target="_blank" rel="noopener noreferrer">
+                <img src="/google-play-badge.png" alt="Get it on Google Play">
+              </a>
+            </div>
+          </div>
+
+          <div class="fact-label">Price</div>
+          <div class="fact-value">$0.99 (one-time purchase)</div>
+
+          <div class="fact-label">Age Rating</div>
+          <div class="fact-value">Ages 4+ · Made for Kids</div>
+
+          <div class="fact-label">Category</div>
+          <div class="fact-value">Games — Kids</div>
+
+          <div class="fact-label">Website</div>
+          <div class="fact-value"><a href="https://starpixelgames.com">starpixelgames.com</a></div>
+
+          <div class="fact-label">Contact</div>
+          <div class="fact-value"><a href="mailto:hello@starpixelgames.com">hello@starpixelgames.com</a></div>
+
+          <div class="fact-label">Social</div>
+          <div class="fact-value">
+            <a href="https://instagram.com/starpixelgames_">Instagram</a> ·
+            <a href="https://www.facebook.com/profile.php?id=61587839576198">Facebook</a> ·
+            <a href="https://www.pinterest.com/0e0tmhmb2lcxjc2wcc1uolpmh80pk7/">Pinterest</a>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- DESCRIPTION -->
+      <section>
+        <div class="section-label">About the Game</div>
+        <h2 class="section-heading">What is Color Catcher?</h2>
+        <p>Color Catcher is a fun, fast-paced catching game for kids ages 4 and up. Players guide a basket to catch falling stars, gems, treats, and surprises while dodging skulls, spiders, and bats that appear in later levels.</p>
+        <br>
+        <p>In a children's app market dominated by free-to-play titles monetized through advertising and data collection, Color Catcher takes a fundamentally different approach: no ads, no tracking, no in-app purchases, and full offline functionality.</p>
+      </section>
+
+      <hr class="divider">
+
+      <!-- KEY FEATURES -->
+      <section>
+        <div class="section-label">Key Features</div>
+        <h2 class="section-heading">What makes it different</h2>
+        <ul class="features-list">
+          <li>Zero ads — no banners, no video ads, no sponsored content</li>
+          <li>Zero data collection — fully COPPA compliant</li>
+          <li>Zero in-app purchases — one price, everything included</li>
+          <li>Works 100% offline — no internet required</li>
+          <li>Three difficulty levels (Easy, Medium, Hard)</li>
+          <li>Power-ups: wider basket, slow motion, shields</li>
+          <li>Combo scoring system with multipliers</li>
+          <li>Milestone celebrations with fireworks</li>
+          <li>Local leaderboard with avatar selection</li>
+          <li>Changing sky backgrounds as you level up</li>
+        </ul>
+      </section>
+
+      <hr class="divider">
+
+      <!-- ASSETS -->
+      <section>
+        <div class="section-label">Assets</div>
+        <h2 class="section-heading">Downloadable media</h2>
+        <div class="assets-note">
+          <strong>Screenshots, app icon, and logo files</strong> are available upon request. Email <a href="mailto:hello@starpixelgames.com" style="color:var(--accent);text-decoration:none;">hello@starpixelgames.com</a> and we'll send a press asset package within 24 hours.
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- BRAND GUIDELINES -->
+      <section>
+        <div class="section-label">Brand</div>
+        <h2 class="section-heading">Visual identity</h2>
+
+        <p style="margin-bottom:8px;"><strong style="color:var(--heading);">Fonts</strong></p>
+        <p>Display: <strong>Fraunces</strong> (headings, game title). Body: <strong>DM Sans</strong> (all body text, UI, captions).</p>
+        <br>
+
+        <p style="margin-bottom:8px;"><strong style="color:var(--heading);">Colors</strong></p>
+        <div class="color-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#08090d;"></div>
+            <div><div class="swatch-label">Background</div><div class="swatch-hex">#08090D</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#fbbf24;"></div>
+            <div><div class="swatch-label">Gold</div><div class="swatch-hex">#FBBF24</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#10B981;"></div>
+            <div><div class="swatch-label">Green</div><div class="swatch-hex">#10B981</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#B91048;"></div>
+            <div><div class="swatch-label">Red</div><div class="swatch-hex">#B91048</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#f0f2f5;"></div>
+            <div><div class="swatch-label">Headings</div><div class="swatch-hex">#F0F2F5</div></div>
+          </div>
+        </div>
+
+        <p style="margin-bottom:8px;"><strong style="color:var(--heading);">Usage Rules</strong></p>
+        <p>Always use the logo on dark backgrounds. Don't stretch, rotate, or recolor the icon. Maintain clear space equal to the height of the star element around the logo. When referencing in text, always write "Star Pixel Games" (three words, capitalized).</p>
+      </section>
+
+      <hr class="divider">
+
+      <!-- BOILERPLATE -->
+      <section>
+        <div class="section-label">About</div>
+        <h2 class="section-heading">Boilerplate</h2>
+        <div class="boilerplate">
+          Star Pixel Games is an indie studio that builds fun, safe, ad-free mobile games for kids ages 4+. Every game follows one rule: no ads, no tracking, no in-app purchases — just play. Founded in 2026, the studio's first release, Color Catcher, is available on the App Store and Google Play for $0.99. Built by parents, with their kids in mind, for yours.
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <div class="contact-box">
+        <h3>Media Inquiries</h3>
+        <p>For review copies, interviews, or additional assets:</p>
+        <a href="mailto:hello@starpixelgames.com" class="contact-email">hello@starpixelgames.com</a>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/color-catcher">Color Catcher</a>
+        <a href="/news">News</a>
+        <a href="/about">About</a>
+        <a href="/color-catcher/privacy">Privacy Policy</a>
+        <a href="/color-catcher/support">Support</a>
+      </div>
+      <p>&copy; 2026 Star Pixel Games · <a href="mailto:hello@starpixelgames.com" class="footer-email">hello@starpixelgames.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
